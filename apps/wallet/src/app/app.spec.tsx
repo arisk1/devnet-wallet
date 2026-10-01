@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import App from './app';
 
@@ -8,10 +8,9 @@ describe('App', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should have a greeting as the title', () => {
-    const { getAllByText } = render(<App />);
-    expect(
-      getAllByText(new RegExp('Devnet Wallet', 'gi')).length > 0,
-    ).toBeTruthy();
+  it('should render in the h1', () => {
+    render(<App />);
+    const heading = screen.getByRole('heading', { level: 1 });
+    expect(heading.textContent).toBe('Devnet Wallet');
   });
 });
