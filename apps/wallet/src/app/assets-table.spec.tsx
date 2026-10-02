@@ -9,26 +9,18 @@ const holdings: Holding[] = [
 ];
 
 describe('AssetsTable', () => {
-  it('should render the Holding fields as column headers', () => {
-    render(<AssetsTable holdings={holdings} />);
-    const headers = screen
-      .getAllByRole('columnheader')
-      .map((th) => th.textContent);
-    expect(headers).toEqual([ 'symbol', 'name', 'amount', 'priceUsd']);
-  });
-
   it('should render one row per holding', () => {
     render(<AssetsTable holdings={holdings} />);
-    const [, ...rows] = screen.getAllByRole('row');
+    const rows = screen.getAllByRole('row');
     expect(rows).toHaveLength(2);
   });
 
-  it('should render the values of a holding in its row', () => {
+  it('should render a holding with its USD value in the last cell', () => {
     render(<AssetsTable holdings={holdings} />);
-    const [, firstRow] = screen.getAllByRole('row');
+    const [firstRow] = screen.getAllByRole('row');
     const cells = within(firstRow)
       .getAllByRole('cell')
       .map((td) => td.textContent);
-    expect(cells).toEqual(['AAA', 'Token A', '2', '10']);
+    expect(cells).toEqual(['AAA', 'Token A', '2', '$20.00']);
   });
 });

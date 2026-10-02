@@ -11,6 +11,6 @@ const holdings: Holding[] = [
 describe('Total', () => {
   it('should render the summed USD value of the holdings', () => {
     const { container } = render(<Total holdings={holdings} />);
-    expect(container.textContent).toBe('23');
+    expect(container.textContent).toBe('$23.00');
   });
 });
