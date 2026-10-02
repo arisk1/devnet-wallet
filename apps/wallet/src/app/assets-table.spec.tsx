@@ -1,6 +1,6 @@
 import { render, screen, within } from '@testing-library/react';
 
-import type { Holding } from './app';
+import type { Holding } from './holding';
 import { AssetsTable } from './assets-table';
 
 const holdings: Holding[] = [
@@ -13,6 +13,12 @@ describe('AssetsTable', () => {
     render(<AssetsTable holdings={holdings} />);
     const rows = screen.getAllByRole('row');
     expect(rows).toHaveLength(2);
+  });
+
+  it('should render only the table, without the total', () => {
+    const { container } = render(<AssetsTable holdings={holdings} />);
+    expect(container.firstElementChild?.tagName).toBe('TABLE');
+    expect(screen.queryByText('$23.00')).toBeNull();
   });
 
   it('should render a holding with its USD value in the last cell', () => {

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import type { Holding } from './app';
+import type { Holding } from './holding';
 import { Total } from './total';
 
 const holdings: Holding[] = [

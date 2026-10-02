@@ -1,20 +1,13 @@
-import { AssetsTable } from './assets-table';
 import { HOLDINGS } from './holding';
+import { Portfolio } from './portfolio';
 
 export function App() {
-
   return (
     <main>
       <h1>Devnet Wallet</h1>
-      {HOLDINGS.length <= 0 ? (
-        'No tokens yet'
-      ) : (
-        <AssetsTable holdings={HOLDINGS} />
-      )}
+      <Portfolio holdings={HOLDINGS} />
     </main>
   );
 }
-
-
 
 export default App;
