@@ -1,12 +1,16 @@
 import { AssetsTable } from './assets-table';
-import { Total } from './total';
 
 export function App() {
+  const isEmpty = () => {};
+
   return (
     <main>
       <h1>Devnet Wallet</h1>
-      <Total holdings={HOLDINGS} />
-      <AssetsTable holdings={HOLDINGS} />
+      {HOLDINGS.length <= 0 ? (
+        'No tokens yet'
+      ) : (
+        <AssetsTable holdings={HOLDINGS} />
+      )}
     </main>
   );
 }
