@@ -14,7 +14,7 @@ describe('AssetsTable', () => {
     const headers = screen
       .getAllByRole('columnheader')
       .map((th) => th.textContent);
-    expect(headers).toEqual(['mint', 'symbol', 'name', 'amount', 'priceUsd']);
+    expect(headers).toEqual([ 'symbol', 'name', 'amount', 'priceUsd']);
   });
 
   it('should render one row per holding', () => {
@@ -29,6 +29,6 @@ describe('AssetsTable', () => {
     const cells = within(firstRow)
       .getAllByRole('cell')
       .map((td) => td.textContent);
-    expect(cells).toEqual(['mint-a', 'AAA', 'Token A', '2', '10']);
+    expect(cells).toEqual(['AAA', 'Token A', '2', '10']);
   });
 });
