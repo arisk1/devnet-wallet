@@ -1,4 +1,4 @@
-import type { Holding } from './app';
+import type { Holding } from './holding';
 import { formatUsd } from './format-usd';
 import { Total } from './total';
 
