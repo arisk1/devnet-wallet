@@ -1,5 +1,5 @@
-import type { Holding } from './holding';
-import { formatUsd } from './format-usd';
+import type { Holding } from '../data-access/holding';
+import { formatUsd } from '../shared/utils/format-usd';
 
 type TotalProps = {
   holdings: Holding[];

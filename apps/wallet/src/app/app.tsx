@@ -1,5 +1,5 @@
-import { HOLDINGS } from './holding';
-import { Portfolio } from './portfolio';
+import { HOLDINGS } from './data-access/holding';
+import { Portfolio } from './portfolio/portfolio';
 
 export function App() {
   return (

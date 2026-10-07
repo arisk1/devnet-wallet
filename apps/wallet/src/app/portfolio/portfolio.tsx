@@ -1,6 +1,6 @@
-import { AssetsTable } from './assets-table';
-import type { Holding } from './holding';
-import { Total } from './total';
+import { AssetsTable } from '../assets-table/assets-table';
+import type { Holding } from '../data-access/holding';
+import { Total } from '../total/total';
 
 type PortfolioProps = {
   holdings: Holding[];
