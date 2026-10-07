@@ -14,7 +14,7 @@ export function Portfolio({ holdings }: PortfolioProps) {
     return <div>No tokens yet</div>;
   }
 
-  const nonZeroBalances = holdings.filter((h) => h.amount * h.priceUsd > 0);
+  const nonZeroBalances = holdings.filter((h) => h.amount > 0);
   const balanceFilter = hideZeroBalances ? nonZeroBalances : holdings;
   const filteredHoldings = [...balanceFilter].sort((a, b) => {
     if (sortBy === 'highest') {

@@ -6,7 +6,7 @@ import { Portfolio } from './portfolio';
 const holdings: Holding[] = [
   { mint: 'mint-a', symbol: 'AAA', name: 'Token A', amount: 2, priceUsd: 10 },
   { mint: 'mint-b', symbol: 'BBB', name: 'Token B', amount: 3, priceUsd: 1 },
-  { mint: 'mint-c', symbol: 'CCC', name: 'Token C', amount: 3, priceUsd: 0 },
+  { mint: 'mint-c', symbol: 'CCC', name: 'Token C', amount: 0, priceUsd: 123 },
 ];
 
 const symbolsInOrder = () =>
